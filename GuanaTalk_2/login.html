@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuanaTalk - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="GuanaTalk Logo">
+            <span>GuanaTalk</span>
+        </div>
+        
+        <button class="profile-btn">My Profile</button>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card">
+            <h1>GuanaTalk Login: Start Your Journey</h1>
+            
+            <form action="php/login.php" method="POST">
+                <div class="input-group">
+                    <div class="icon-box email-icon">📧</div>
+                    <div class="input-field">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="icon-box lock-icon">🔒</div>
+                    <div class="input-field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+        </div>
+
+        <div class="fun-fact-bar">
+            <span class="megaphone">📢</span>
+            <p><strong>Fun Fact:</strong> Did you know the marble game is known in El Salvador as "chibolas"?</p>
+            <span class="arrow">❯</span>
+        </div>
+    </main>
+</body>
+</html>

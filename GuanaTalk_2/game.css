@@ -1,0 +1,119 @@
+.navbar {
+    background-color: #1f4e8c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    color: white;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background: #2ecc71;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    background: #27ae60;
+}
+
+.game-container { max-width: 900px; margin: 20px auto; } /* Centrar y limitar ancho */
+
+/* --- Estilos para las pistas y feedback --- */
+.hint-area { font-style: italic; color: #555; margin-bottom: 10px; }
+.definition-area {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fdf2e9;
+    border: 2px solid #e67e22;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* --- ESTILOS CLAVE PARA EL AHORCADO CON CSS --- */
+#hangman-drawing {
+    position: relative;
+    width: 200px; /* Ancho del área de dibujo */
+    height: 250px; /* Alto del área de dibujo */
+    margin: 0 auto;
+    border-bottom: 4px solid #8e6e46; /* El suelo */
+}
+
+/* Base de la horca */
+#h-stand {
+    position: absolute;
+    bottom: 0; left: 20px; width: 120px; height: 10px; background: #8e6e46;
+}
+#h-stand::before { /* Poste vertical */
+    content: ''; position: absolute; bottom: 10px; left: 10px; width: 10px; height: 230px; background: #8e6e46;
+}
+#h-stand::after { /* Viga horizontal superior */
+    content: ''; position: absolute; top: -230px; left: 10px; width: 100px; height: 10px; background: #8e6e46;
+}
+
+/* La soga */
+#h-rope {
+    position: absolute;
+    top: 20px; left: 100px; width: 4px; height: 40px; background: #d35400;
+}
+
+/* Partes del cuerpo (Stickman) */
+/* Usamos opacidad para ocultarlas por defecto */
+#h-head, #h-body, #h-arm-l, #h-arm-r, #h-leg-l, #h-leg-r {
+    position: absolute;
+    background: #333;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease; /* Efecto suave al aparecer */
+}
+
+#h-head {
+    top: 60px; left: 87px; width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    background: none;
+}
+
+#h-body { top: 93px; left: 100px; width: 4px; height: 70px; opacity: 0; }
+#h-arm-l { top: 100px; left: 80px; width: 40px; height: 4px; rotate: -45deg;}
+#h-arm-r { top: 100px; left: 100px; width: 40px; height: 4px; rotate: 45deg;}
+#h-leg-l { top: 160px; left: 80px; width: 40px; height: 4px; rotate: -45deg;}
+#h-leg-r { top: 160px; left: 100px; width: 40px; height: 4px; rotate: 45deg;}
+
+/* ... (Estilos del teclado y Used Letters) ... */
+.used-letters span { font-weight: bold; text-transform: uppercase; margin: 0 5px; color: #777; text-decoration: line-through; }
+
+.keyboard button.correct { background-color: #a9dfbf; color: #27ae60; }
+.keyboard button.wrong { background-color: #fadbd8; color: #e74c3c; cursor: not-allowed; }
